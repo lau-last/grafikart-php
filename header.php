@@ -29,7 +29,7 @@
 
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item <?php if ($_SERVER['SCRIPT_NAME'] === "/grafikart/index.php"):
+            <li class="nav-item <?php if ($_SERVER['SCRIPT_NAME'] === "/grafikart/index"):
                 ?>active<?php
             endif; ?>">
                 <a class="nav-link" href="/grafikart/index.php">Home</span></a>
