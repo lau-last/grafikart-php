@@ -1,3 +1,9 @@
+<?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'grafikart' . DIRECTORY_SEPARATOR . 'functions' . DIRECTORY_SEPARATOR . 'auth.php';
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -18,7 +24,7 @@
 
 <body>
 
-<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
     <a class="navbar-brand" href="#">Mon site</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse"
             data-target="#navbarsExampleDefault"
@@ -39,6 +45,11 @@
             endif; ?>">
                 <a class="nav-link" href="/grafikart/contact.php">Contact</a>
             </li>
+        </ul>
+        <ul class="navbar-nav">
+            <?php if (is_connected()):?>
+                <li class="nav-item"><a href="/grafikart/logout.php" class="nav-link">Se déconnecter</a></li>
+            <?php endif; ?>
         </ul>
     </div>
 </nav>

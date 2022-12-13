@@ -1,4 +1,6 @@
 <?php
+session_start();
+$_SESSION['role'] = 'administrateur';
 $title = "Page d'accueil";
 $nav = 'index';
 require 'header.php';

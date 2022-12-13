@@ -4,7 +4,14 @@
     <hr>
 <?php if (!isset($page)): ?>
     <div class="row">
-        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <?php
+            require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'grafikart' . DIRECTORY_SEPARATOR . 'functions' . DIRECTORY_SEPARATOR . 'compteur.php';
+            ajouter_vu();
+            $vues = nombre_vues();
+            ?>
+            Il y a <?= $vues; ?> vue<?php if ($vues > 1): ?>s<?php endif; ?>.
+        </div>
         <div class="col-md-4">
             <form action="newsletter.php" method="post" class="form-inline">
                 <div class="form-group">
