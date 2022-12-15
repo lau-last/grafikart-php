@@ -1,9 +1,10 @@
 <?php
 
 $error = null;
+$password = '$2y$10$qChNtfS/HhpcAnVFlISS1uwsowytPLAJUbAS67nDTxT6kAC2BgZ42';
 
 if (!empty($_POST['pseudo']) && !empty($_POST['motdepasse'])) {
-    if ($_POST['pseudo'] === 'John' && $_POST['motdepasse'] === 'Doe') {
+    if ($_POST['pseudo'] === 'John' && password_verify($_POST['motdepasse'], $password)) {
         session_start();
         $_SESSION['connecte'] = 1;
         header('location: /grafikart/dashboard.php');
