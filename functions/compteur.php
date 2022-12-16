@@ -54,3 +54,4 @@ function nombre_vues_detail_mois(int $annee, int $mois): array
     }
     return $visites;
 }
+
